@@ -1,17 +1,15 @@
-import Input from "@/components/common/Input";
 import Search from "@/components/common/Search";
+import BestActivity from "@/components/main/BestActivity";
+import KeyVisual from "@/components/main/KeyVisual";
 
 export default function Main() {
   return (
     <div className="main-wrap">
-      <h1>글로벌 노마드</h1>
-      <Input
-        type="text"
-        label="이름"
-        placeholder="이름을 입력하세요"
-        pwd={false}
-      />
-      <Search />
+      <KeyVisual />
+      <div className="main-inner">
+        <Search />
+        <BestActivity />
+      </div>
     </div>
   );
 }
