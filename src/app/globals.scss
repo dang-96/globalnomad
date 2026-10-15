@@ -98,6 +98,8 @@ header {
 
 /* BestActivity */
 .best-activity {
+  margin-bottom: 60px;
+
   .best-activity-header {
     display: flex;
     justify-content: space-between;
@@ -112,6 +114,105 @@ header {
     .best-activity-nav {
       display: flex;
       gap: 12px;
+
+      button {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 44px;
+        height: 44px;
+      }
+    }
+  }
+}
+
+.all-activity-wrap {
+  .all-activity-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 35px;
+
+    .category-list {
+      display: flex;
+      gap: 24px;
+
+      li {
+        button {
+          width: 127px;
+          height: 58px;
+          border: 1px solid var(--color-green-900);
+          border-radius: 15px;
+          color: var(--color-green-900);
+          background-color: var(--color-white);
+
+          &:hover {
+            color: var(--color-white);
+            background-color: var(--color-green-900);
+          }
+
+          &.active {
+            color: var(--color-white);
+            background-color: var(--color-green-900);
+          }
+        }
+      }
+    }
+  }
+
+  .all-activity-title {
+    font-size: 36px;
+    font-weight: bold;
+    margin-bottom: 32px;
+  }
+}
+
+/* ActivityCard */
+.activity-card {
+  .activity-card-img {
+    position: relative;
+    width: 283px;
+    height: 283px;
+    border-radius: 20px;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+
+    &.big {
+      width: 384px;
+      height: 384px;
+    }
+  }
+
+  .activity-inner-content {
+    position: absolute;
+    left: 20px;
+    bottom: 30px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+
+    .activity-review {
+      display: flex;
+      gap: 6.5px;
+
+      span {
+        color: var(--color-white);
+      }
+    }
+
+    .activity-title {
+      max-width: 251px;
+      word-wrap: break-word;
+      color: var(--color-white);
+    }
+
+    .activity-price {
+      color: var(--color-white);
+
+      span {
+        color: var(--color-gray-700);
+      }
     }
   }
 }
