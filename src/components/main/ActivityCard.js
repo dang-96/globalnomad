@@ -10,22 +10,22 @@ const ActivityCard = ({ type, img, review, reviewTotal, title, price }) => {
             className="activity-card-img"
             style={{ backgroundImage: `url(${img})` }}
           />
-          <div className="activity-card-img">
-            <p>
+          <div className="activity-out-content">
+            <p className="activity-review">
               <Image
                 src="/images/icons/icon-start.svg"
                 alt="별 아이콘"
                 width={15}
                 height={15}
               />
-              <span>
-                {review} ({reviewTotal})
+              <span className="text-lg-medium">
+                {review} <span className="review-total">({reviewTotal})</span>
               </span>
             </p>
-            <h4>{title}</h4>
-            <p>
+            <h4 className="activity-title text-2xl-semibold">{title}</h4>
+            <p className="activity-price text-2xl-bold">
               ₩ {price}
-              <span>/ 인</span>
+              <span className="text-xl-regular">/ 인</span>
             </p>
           </div>
         </>
