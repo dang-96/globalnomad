@@ -165,22 +165,50 @@ header {
     font-weight: bold;
     margin-bottom: 32px;
   }
+
+  .all-activity-list {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 24px;
+  }
 }
 
 /* ActivityCard */
 .activity-card {
   .activity-card-img {
     position: relative;
-    width: 283px;
-    height: 283px;
+    width: 100%;
+    max-width: 283px;
+    aspect-ratio: 1 / 1;
     border-radius: 20px;
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
 
     &.big {
-      width: 384px;
-      height: 384px;
+      max-width: 384px;
+    }
+  }
+
+  .activity-out-content {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-top: 16px;
+
+    .activity-review {
+      display: flex;
+      gap: 5px;
+
+      .review-total {
+        color: var(--color-gray-700);
+      }
+    }
+
+    .activity-title {
+    }
+
+    .activity-price {
     }
   }
 
@@ -348,6 +376,71 @@ footer {
       background-color: var(--color-nomad-black);
       color: var(--color-white);
       border-radius: 4px;
+    }
+  }
+}
+
+/* DropDown */
+.drop-down {
+  position: relative;
+
+  .drop-down-button {
+    position: relative;
+    width: 157px;
+    height: 53px;
+    text-align: left;
+    border: 1px solid var(--color-green-900);
+    border-radius: 15px;
+    padding: 0 20px;
+    color: var(--color-green-900);
+
+    .drop-down-icon {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      right: 20px;
+      transition: all 0.3s;
+
+      &.active {
+        transform: translateY(-50%) rotate(180deg);
+      }
+    }
+  }
+
+  .drop-down-list {
+    position: absolute;
+    top: 61px;
+    left: 0;
+    z-index: 1;
+
+    li {
+      border: 1px solid var(--color-gray-300);
+      overflow: hidden;
+
+      &:not(:last-child) {
+        border-bottom: 0px;
+      }
+
+      &:first-child {
+        border-radius: 6px 6px 0px 0px;
+      }
+
+      &:last-child {
+        border-radius: 0px 0px 6px 6px;
+      }
+
+      button {
+        width: 157px;
+        height: 58px;
+        font-size: 18px;
+        font-weight: normal;
+        color: var(--color-gray-900);
+        background-color: var(--color-white);
+
+        &:hover {
+          background-color: var(--color-gray-300);
+        }
+      }
     }
   }
 }
